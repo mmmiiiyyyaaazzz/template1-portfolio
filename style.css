@@ -1,7 +1,7 @@
 
 .hero {
   position: relative;
-  background-image: url("../image/stretch_woman.jpg"); 
+  background-image: url("stretch_woman.jpg"); 
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -443,7 +443,7 @@
 }
 .hero-small {
   height: 60vh;
-  background: url("../image/recruit.jpg") 50% 2%/cover no-repeat;
+  background: url("recruit.jpg") 50% 2%/cover no-repeat;
   filter:contrast(110%) brightness(105%)
 }
 .hero-small::before {
@@ -453,14 +453,14 @@
   background: rgba(0, 0, 0, 0.1);
 }
 .hero.hero-instagram {
-  background: url("../image/sns_woman3.jpg") 100% 38%/cover no-repeat ; 
+  background: url("sns_woman3.jpg") 100% 38%/cover no-repeat ; 
   height: 60vh;
 }
 .instagram-section {
   color: #5c4a2f;
 }
 .hero.hero-company {
-  background: url("../image/treadmill.jpg") center/cover no-repeat;
+  background: url("treadmill.jpg") center/cover no-repeat;
   height: 80vh;
 }
 /* --- course.html専用CTA（濃いめグラデーション） --- */
@@ -660,7 +660,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../image/traning_gear.jpg") center/cover no-repeat;
+  background: url("traning_gear.jpg") center/cover no-repeat;
   opacity: 0.15; /* ちょっと濃くしてみる */
   z-index: 0;
 }
@@ -702,7 +702,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../image/staff_3.jpg") no-repeat center 20%/cover;
+  background: url("staff_3.jpg") no-repeat center 20%/cover;
   opacity: 0.15; /* 少しだけしっかり見える */
   z-index: 0;
 }
@@ -736,7 +736,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../image/スタッフ白黒.jpg") no-repeat center/cover;
+  background: url("スタッフ白黒.jpg") no-repeat center/cover;
   opacity: 0.08;
   z-index: 0;
 }
@@ -1221,3 +1221,4 @@
   justify-self: start;              /* 右端寄せを解除 */
   text-align: left;                 /* 見た目も左寄せ */
 }
+
