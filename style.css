@@ -1,0 +1,1223 @@
+
+.hero {
+  position: relative;
+  background-image: url("../image/stretch_woman.jpg"); 
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 80vh;
+  color: #f5f3ef;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 40px;
+  padding-top: 0;
+  margin: 0;
+
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  background-color: #5c4a2fad;
+  padding: 20px 30px;
+  max-width: 430px;
+  border-radius: 8px;
+  color: #f5f3ef;
+}
+.hero-text h1 {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+.hero-text p {
+  word-break: keep-all;
+}
+.facility {
+  background-color: #f5f3ef;
+  color: #5c4a2f;
+  padding: 60px 20px;
+  text-align: center;
+}
+.facility h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.facility p {
+  font-size: 1rem;
+  line-height: 2.0;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: left;
+}
+.facility-intro {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.facility-intro h2 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.8rem;
+  color: #5c4a2f;
+}
+.facility-intro-flex {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+.facility-intro-image {
+  width: 30%;
+}
+.facility-intro-image img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.facility-intro-text {
+  width: 60%;
+}
+.facility-intro-text p, 
+.facility-intro-text ul {
+  margin: 0;
+}
+.facility-intro-text p {
+  margin-bottom: 15px;
+  line-height: 1.2em;
+}
+.facility-intro-text li {
+  line-height: 1.6em;
+}
+.course-list {
+  padding: 60px 20px;
+  background-color: #f8f5f0;
+  text-align: center;
+  margin-top: 50px;
+}
+.course-list h2 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: #5c4a2f;
+}
+.course-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.course-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12); /* 0 4px 12px → 少し強め */
+  padding: 20px;
+  width: 300px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+}
+.course-card h3 {
+  text-decoration: none;
+  color: #5c4a2f;
+}
+.course-card a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: #5c4a2f;
+}
+.course-card a:hover {
+  text-decoration: none;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+}
+.course-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: transform .3s ease, box-shadow .3s ease; /* 既存に足すだけ */
+}
+.course-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #5c4a2f;
+}
+.course-card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+.course-card a:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2); /* 影を追加 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 影のアニメも追加 */
+}
+
+.service-section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.service-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: #5c4a2f;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.service-card {
+  background-color: #f5f3ef;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 280px;
+  padding: 20px;
+  text-align: left;
+}
+
+.service-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #5c4a2f;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #3d2c1e;
+  line-height: 1.4;
+}
+.flow-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+.flow-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: #5c4a2f;
+}
+.flow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.flow-step {
+  width: 280px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.flow-step p {
+  line-height: 1.6;
+}
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: pink;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 auto;
+}
+.voice-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+.voice-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+.voice-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.voice-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+.voice-text {
+  font-style: italic;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.voice-name {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+.faq-bg {
+  background-color: #f9f9f9;
+  width: 100%;
+}
+.faq-section {
+  padding: 60px 20px;
+  max-width: 710px;
+  margin: 0 auto;
+}
+.faq-section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: #5c4a2f;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.faq-item h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+.faq-item p {
+  line-height: 1.6;
+  margin: 0;
+}
+.faq-label {
+  font-weight: bold;
+  margin-right: 5px;
+  color: #5c4a2f;
+}
+.faq-answer {
+  display: flex;
+  align-items: flex-start;
+}
+
+.access-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+.access-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: #5c4a2f;
+}
+.access-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.access-map {
+  flex: 1 1 500px;
+  min-width: 300px;
+}
+.access-info {
+  flex: 1 1 300px;
+  text-align: left;
+  line-height: 1.6;
+  min-width: 280px;
+}
+.access-map iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3; 
+  border: 0;
+}
+.contact-section {
+  background-color: #f8f5f0; /* 落ち着いた薄ベージュ */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #5c4a2f;
+}
+
+.contact-section p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-section .fancy-button {
+  background-color: #ff7fa8; /* ピンクのボタンは残す */
+}
+
+
+.sns-box {
+  margin-top: 30px;
+}
+.contact-section .instagram-link {
+  color: #e1306c;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+.contact-section .instagram-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.contact-section {
+  background-color: #fdf3f8;
+  padding: 60px 20px;
+  text-align: center;
+}
+.contact-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #5c4a2f;
+}
+.contact-section p {
+  margin-bottom: 30px;
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  vertical-align: bottom;
+}
+.contact-form button {
+  background-color: #d36e8b;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background-color: #b85872;
+}
+.insta-link {
+  display: inline-block;
+  margin-bottom: 40px;
+  color: #d36e8b;
+  text-decoration: underline;
+}
+.site-footer {
+  background-color: #5c4334;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+.hero-small {
+  height: 60vh;
+  background: url("../image/recruit.jpg") 50% 2%/cover no-repeat;
+  filter:contrast(110%) brightness(105%)
+}
+.hero-small::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.hero.hero-instagram {
+  background: url("../image/sns_woman3.jpg") 100% 38%/cover no-repeat ; 
+  height: 60vh;
+}
+.instagram-section {
+  color: #5c4a2f;
+}
+.hero.hero-company {
+  background: url("../image/treadmill.jpg") center/cover no-repeat;
+  height: 80vh;
+}
+/* --- course.html専用CTA（濃いめグラデーション） --- */
+.cta-course {
+  position: relative;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #ede5db 100%) !important;
+  overflow: hidden;
+}
+
+.cta-course::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(92, 67, 52, 0.05); /* 透かし効果も少し濃いめ */
+  z-index: 0;
+}
+
+
+
+/* --- course CTA セクション（グラデーション背景） --- */
+.cta {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f7f3ef 100%);
+  overflow: hidden;
+}
+
+/* 軽く装飾するなら透かし模様も可（任意） */
+.cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(92, 67, 52, 0.03); /* 薄いブラウン系透かし */
+  z-index: 0;
+}
+
+.cta h2,
+.cta p,
+.cta a {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-course::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1); /* トーンを落とすなら */
+}
+/* course-detail セクション全体 */
+.course-detail {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 40px auto; /* 上下余白を追加 */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.course-detail:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* 見出し */
+.course-detail h2 {
+  display: inline-block;
+  margin: 0 auto 30px;
+  padding: 8px 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 10px; /* 角丸少し大きく */
+  position: relative;
+  background: linear-gradient(to bottom, #f8f4f2, #dfd6cf);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* 軽い影 */
+}
+
+.course-detail h2::after {
+  content: none; /* 下線なし */
+}
+
+
+
+
+/* 画像とテキスト横並び */
+.course-flex {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* 画像 */
+.course-flex img {
+  flex: 1 1 300px;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.course-flex img:hover {
+  transform: scale(1.03);
+}
+
+/* テキスト */
+.course-text {
+  flex: 1 1 300px;
+}
+
+.course-text .lead-text {
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.course-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.course-text li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+}
+
+.course-text li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #b48a78;
+  font-weight: bold;
+}
+
+/* スマホ対応 */
+@media (max-width: 767px) {
+  .course-flex {
+    flex-direction: column;
+  }
+
+  .course-flex img {
+    width: 100%;
+  }
+}
+
+.cta {
+  background: #fff; /* 背景を白に変更 */
+  text-align: center;
+  padding: 80px 20px; /* 少し広めの余白 */
+}
+
+.cta h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--brown-main); /* 共通カラー */
+}
+
+.cta .contact-button {
+  display: inline-block;
+  margin-top: 20px;
+}
+.cta a.fancy-button {
+  margin-top: 20px;
+}
+.cta-illustration {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f7f3ef 100%
+  );
+  padding: 140px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+
+.cta-illustration::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../image/traning_gear.jpg") center/cover no-repeat;
+  opacity: 0.15; /* ちょっと濃くしてみる */
+  z-index: 0;
+}
+
+.cta-illustration h2,
+.cta-illustration p,
+.cta-illustration a {
+  position: relative;
+  z-index: 1;
+}
+.cta-illustration h2 {
+  font-size: 2.2rem; /* 元より大きめに */
+  font-weight: 700;  /* 太字 */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 薄い影 */
+}
+.cta-illustration p {
+  font-size: 1rem;        /* 読みやすい標準サイズ */
+  line-height: 1.8;       /* 行間を広めに設定 */
+  max-width: 700px;       /* 長文でも横幅を抑える */
+  margin: 0 auto 20px;    /* 中央寄せ＆下に余白 */
+  color: var(--text-base);/* 文章色（共通） */
+}
+.apply-section.illustration {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f7f3ef 100%
+  );
+  padding: 160px 20px; /* 高さを出す */
+  text-align: center;
+  overflow: hidden;
+}
+
+.apply-section.illustration::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../image/staff_3.jpg") no-repeat center 20%/cover;
+  opacity: 0.15; /* 少しだけしっかり見える */
+  z-index: 0;
+}
+
+.apply-section.illustration h2,
+.apply-section.illustration p,
+.apply-section.illustration a {
+  position: relative;
+  z-index: 1;
+}
+
+.apply-section.illustration p {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  color: var(--text-base);
+}
+.apply-section {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f7f3ef 100%);
+  padding: 100px 20px; /* 高さを少し出す */
+  text-align: center;
+  overflow: hidden;
+}
+
+.apply-section::before {
+  content: "";
+  position: absolute;
+  top: 20%; /* 上から20%位置 */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../image/スタッフ白黒.jpg") no-repeat center/cover;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.apply-section h2,
+.apply-section p,
+.apply-section a {
+  position: relative;
+  z-index: 1;
+}
+
+.apply-section h2 {
+  font-size: 2.2rem; /* お問い合わせと同じサイズ */
+  margin-bottom: 20px;
+  color: var(--brown-main);
+  font-weight: 700;  /* 太字 */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 薄い影 */
+}
+
+.apply-section p {
+  line-height: 1.8; /* 読みやすさアップ */
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+/* 募集要項全体 */
+.recruit-detail {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* カード風スタイル */
+.job-position {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 30px 20px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.job-position:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* 見出し */
+.job-position h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--brown-main);
+  font-weight: 700;
+  border-left: 5px solid var(--brown-main);
+  padding-left: 10px;
+}
+
+/* 箇条書き改善 */
+.job-position ul {
+  padding-left: 0;
+  line-height: 1.8;
+  list-style: none;
+}
+.job-position ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}
+.job-position ul li::before {
+  content: "▪";
+  position: absolute;
+  left: 0;
+  color: var(--brown-main);
+  font-weight: bold;
+}
+
+
+.course-flex p {
+  line-height: 1.6;
+}
+.course-flex ul {
+  line-height: 1.6;
+}
+/* ===== Recruit Page ===== */
+
+/* 募集要項セクション */
+.recruit-detail {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+.recruit-detail h2 {
+  font-size: 1.9rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #5c4a2f;
+}
+.job-position {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+.job-position:hover {
+  transform: translateY(-3px);
+}
+.job-position h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #5c4a2f;
+}
+.job-position ul {
+  padding-left: 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* 働く環境・福利厚生 */
+
+.work-environment h2 {
+  font-size: 2rem; /* 応募方法より少し控えめ */
+  color: var(--brown-main);
+  margin-bottom: 30px;
+  position: relative;
+}
+
+
+/* --- 働く環境（PCデフォルト） --- */
+/* デフォルト（PC & タブレット） */
+/* --- PC & タブレット --- */
+/* --- 働く環境・福利厚生（全体） --- */
+.work-environment {
+  position: relative;
+  padding: 80px 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 245, 240, 0.95) 100%
+  );
+  text-align: center; /* h2を中央にする基準 */
+}
+
+/* 見出し（大きさ固定） */
+.work-environment h2 {
+  font-size: 2rem;         /* 大きさは固定 */
+  color: var(--brown-main);
+  margin-bottom: 30px;
+}
+
+/* テキスト本体 */
+.work-environment .work-text {
+  max-width: 750px;        /* 幅制限 */
+  margin: 0 auto;          /* セクション中央に配置 */
+  line-height: 2;
+  font-size: 1.05rem;
+  text-align: left;        /* テキストは左揃え */
+  padding: 0 40px;         /* 左右に余白 */
+}
+
+
+
+.apply-section .apply-text {
+  text-align: left;
+  max-width: 500px;   /* PC・iPad用 */
+  margin: 0 auto;
+  padding: 0 100px;   /* PC・iPad用 */
+  line-height: 1.8;
+}
+
+/* --- スマホ時（767px以下） --- */
+@media (max-width: 767px) {
+  .apply-section .apply-text {
+    max-width: 700px;  /* 働く環境・福利厚生と合わせる */
+    padding: 0 5px 0 10px;   /* 左右の余白は控えめに */
+  }
+}
+
+/* ===== Recruit Page Responsive ===== */
+@media (max-width: 767px) {
+  .job-position {
+    padding: 15px;
+  }
+  .job-position h3 {
+    font-size: 1.1rem;
+  }
+  .work-environment p,
+  .apply-section p {
+    font-size: 0.95rem;
+  }
+}
+.company-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0px;
+  line-height: 1.6;
+}
+
+.history-list li {
+  list-style-type: square;
+  padding: 4px 0;
+}
+.company-table {
+  text-align: left;
+}
+.company-table th,
+.company-table td {
+  padding: 2px 20px; /* ← 左右だけ大きめにすると余裕が出る */
+}
+.company-vision p {
+  padding-left: 20px;
+}
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--accent-pink); /* 統一したピンク */
+  text-align: center;
+}
+.service-card p,
+.course-card p {
+  text-align: center;
+}
+/* ====== Contact Section Custom（提案2） ====== */
+.contact-section {
+  background-color: #f8f5f0 !important; /* 落ち着いた全体背景 */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #5c4a2f;
+}
+
+.contact-section p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* ====== Contact Section Custom（落ち着いたブラウン版） ====== */
+.contact-section {
+  background-color: #f8f5f0 !important; /* 全体は落ち着いた薄ベージュ */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #5c4a2f;
+}
+
+.contact-section p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* ====== Contact Section Custom（カフェラテ系ブラウン） ====== */
+.contact-section {
+  background-color: #f8f5f0 !important; /* 全体は落ち着いた薄ベージュ */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #5c4a2f;
+}
+
+.contact-section p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* ボタン：カフェラテブラウン */
+.contact-section .fancy-button {
+  background-color: #b68c68 !important; /* 柔らかいカフェラテブラウン */
+  color: #fff !important;
+}
+
+.contact-section .fancy-button:hover {
+  background-color: #a67c58 !important; /* 少し濃くなるカフェラテブラウン */
+}
+
+/* Instagramリンクはピンクを維持 */
+.contact-section .instagram-link {
+  color: #e1306c;
+}
+.contact-section .instagram-link:hover {
+  text-decoration: underline;
+}
+.instagram-section p {
+  font-size: 1.05rem;       /* 少し大きめ */
+  line-height: 1.9;         /* 行間を広めに */
+  max-width: 700px;         /* 横幅を制限して読みやすく */
+  margin: 0 auto 30px;      /* 中央寄せ＆下に余白 */
+  color: var(--text-base);  /* 落ち着いた文字色 */
+}
+/* recruit.html専用: 応募フォームへボタン位置調整 */
+.apply-section .fancy-button {
+  display: inline-block;
+  margin-top: 15px; /* 元々より下に配置（値はお好みで調整） */
+}
+
+.instagram-section {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1000px; /* お好みで上限幅 */
+  margin: 0 auto;
+}
+/* 基本（PC含む共通） */
+.thanks-section{
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 見出し・本文の整え */
+.thanks-section h1{
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  margin-bottom: 12px;
+}
+.thanks-section p{
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* ボタンを他ページと同じ見た目で中央に */
+.thanks-section .fancy-button{
+  display: inline-block;    /* 親の text-align:center で中央寄せ */
+  margin-top: 8px;          /* 余白はお好みで */
+}
+
+
+/* Access：営業時間（左=見出し、右=内容）を全デバイスで揃える */
+.access-section .business-hours{
+  display:grid;
+  grid-template-columns:max-content 1fr; /* 左: 営業時間： / 右: 内容 */
+  gap:8px 12px;
+  margin:0; padding:0;
+}
+
+.access-section .business-hours dt,
+.access-section .business-hours dd{
+  margin:0; padding:0; text-indent:0;
+}
+
+.access-section .business-hours dd{
+  display:grid;
+  grid-template-columns:6.5em 1fr;  /* ラベル固定幅｜時刻 */
+  column-gap:10px;
+  align-items:start;
+}
+
+.access-section .business-hours dd .label{ white-space:nowrap; }
+.access-section .business-hours dd .time{
+  white-space:nowrap;                 /* 時刻の折返し禁止 */
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:"tnum" 1;
+  min-width:0;
+}
+/* Access セクション内は左寄せ＆幅制限の影響を受けないようにする */
+.access-section .access-info {
+  text-align: left;   /* 親の center を打ち消し */
+  width: auto;        /* 70%制限を無効化（必要なら削除でもOK） */
+}
+
+/* business-hours 内のテキストも念のため左寄せを明示 */
+.access-section .business-hours,
+.access-section .business-hours dd .label,
+.access-section .business-hours dd .time {
+  text-align: left;
+}
+/* Access：親の中央寄せ/幅制限の影響を受けないように */
+.access-section .access-info {
+  text-align: left;
+  width: auto;
+}
+
+/* Access：営業時間（左=見出し、右=内容）を全デバイスで揃える */
+.access-section .business-hours{
+  display: grid;
+  grid-template-columns: max-content 1fr; /* 左: 営業時間： / 右: 内容 */
+  gap: 8px 12px;
+  margin: 0;
+  padding: 0;
+}
+.access-section .business-hours dt,
+.access-section .business-hours dd{
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  line-height: 1.7;
+}
+
+/* 右カラムの各行：〔ラベル固定幅｜時刻〕の2列 */
+.access-section .business-hours dd{
+  display: grid;
+  grid-template-columns: 6.8em 1fr; /* ←足りなければ 7.0em、広すぎなら 6.5em */
+  column-gap: 10px;
+  align-items: start;
+  gap: 0 10px; /* 念のため row/column を明示（下のresponsive上書き対策） */
+}
+
+/* ラベル/時間の体裁 */
+.access-section .business-hours dd .label{ white-space: nowrap; }
+.access-section .business-hours dd .time{
+  white-space: nowrap;                 /* 時刻の折返し禁止 */
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  min-width: 0;
+}
+
+/* 念のため、このブロック内の文字はすべて左寄せに固定 */
+.access-section .business-hours,
+.access-section .business-hours dd .label,
+.access-section .business-hours dd .time{
+  text-align: left;
+}
+/* Access 情報ブロックは幅100%で左寄せ */
+.access-section .access-info{
+  width: 100%;
+  text-align: left;
+}
+/* Access 情報は左寄せ・幅制限なし */
+.access-section .access-info{
+  width: 100%;
+  text-align: left;
+}
+
+/* Access：営業時間（左=見出し、右=内容） */
+.access-section .business-hours{
+  display: grid;
+  grid-template-columns: max-content 1fr;  /* 左:「営業時間：」 / 右: 内容 */
+  gap: 8px 12px;
+  margin: 0;
+  padding: 0;
+}
+.access-section .business-hours dt,
+.access-section .business-hours dd{
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  line-height: 1.7;
+}
+
+/* 右側の各行：〔ラベル固定幅｜時刻〕 */
+.access-section .business-hours dd{
+  display: grid;
+  grid-template-columns: 5.6em 1fr;  /* ←まずは 5.6em。狭ければ 5.2em、広ければ 6.0em */
+  column-gap: 10px;
+  align-items: start;
+  gap: 0 10px;
+}
+.access-section .business-hours dd .label{ white-space: nowrap; }
+.access-section .business-hours dd .time{
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  min-width: 0;
+}
+
+/* 念のため、文字揃えは左固定 */
+.access-section .business-hours,
+.access-section .business-hours dd .label,
+.access-section .business-hours dd .time{
+  text-align: left;
+}
+/* === Access：平日と時間の間を詰める（共通） === */
+.access-section .business-hours dd {
+  display: grid;                    /* 念のため明示 */
+  grid-template-columns: 4em auto;/* ← 右列を auto に！ */
+  column-gap: 8px;                  /* 列間も少しだけ詰める */
+}
+
+.access-section .business-hours dd .time {
+  justify-self: start;              /* 右端寄せを解除 */
+  text-align: left;                 /* 見た目も左寄せ */
+}

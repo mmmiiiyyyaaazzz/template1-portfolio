@@ -1,0 +1,487 @@
+/* =========================
+   基本設定
+========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #4b3621;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   カラーテーマ（共通）
+========================= */
+:root {
+  --brown-main: #5c4a2f;
+  --brown-light: #f1e3d3;
+  --button-main: #c8a98d;      /* カフェラテ系ブラウン */
+  --button-hover: #b18b6a;     /* 少し濃いブラウン */
+  --pink-main: #ff7fa8;
+  --pink-hover: #ff5e93;
+  --bg-light: #f8f5f0;
+  --text-base: #4b3621;
+  --text-light: #fff;
+}
+
+/* =========================
+   ヘッダー
+========================= */
+.site-header {
+  position: relative;
+  background-color: var(--brown-light);
+  width: 100%;
+  min-height: 60px;
+  padding-bottom: 20px;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* 会社名 */
+.header-h1 {
+  flex: 1;
+  min-width: 0;
+  display: block;
+}
+
+.header-h1 h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+/* お問い合わせリンク */
+.contact-link {
+  display: block;
+  text-align: left;
+  max-width: 340px;
+  padding: 0 20px;
+  line-height: .8; /* 修正 */
+}
+
+.contact a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #5c4a2f;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.phone-number a {
+  margin-left: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.phone-number a:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+/* =========================
+   ナビゲーション
+========================= */
+#menu {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  background-color: var(--brown-main);
+  height: 50px;
+  align-items: center;
+  padding: 0;
+  margin: 0; /* 修正 */
+}
+
+#menu a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+#menu a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   ハンバーガーメニュー
+========================= */
+#menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;            /* 中央配置に修正済み */
+  right: 15px;
+  transform: translateY(-50%);
+  z-index: 2000;
+}
+
+#menu-toggle .bar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* =========================
+   フッター
+========================= */
+.site-footer {
+  background-color: var(--brown-main);
+  color: var(--text-light);
+  font-size: 14px;
+  padding: 40px 20px 20px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-logo,
+.footer-nav,
+.footer-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.footer-logo a:hover {
+  text-decoration: underline;
+}
+
+.footer-company {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.footer-social img {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 3px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-social img:hover {
+  opacity: 0.7;
+}
+
+.page-top-footer {
+  text-align: center;
+  margin-top: 10px; /* コピーライトの下との余白 */
+}
+.page-top-footer a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f5f0eb;
+  color: #7a5e48;  /* ブラウン文字 */
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #7a5e48;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.page-top-footer a:hover {
+  background-color: #f2e8de; /* 薄いベージュ背景 */
+  transform: translateY(-2px);
+}
+
+
+
+/* =========================
+   共通ボタン
+========================= */
+.fancy-button,
+button.fancy-button {
+  color: var(--text-light);
+  background-color: var(--button-main);
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fancy-button:hover,
+button.fancy-button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fancy-button:active,
+button.fancy-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   共通セクション
+========================= */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--brown-main);
+}
+
+.section-bg {
+  width: 100%;
+  background-color: var(--bg-light);
+}
+
+.section p {
+  text-align: left;
+  margin: 20px auto 0 auto;
+  max-width: 750px;
+  line-height: 1.8;
+}
+
+/* --- 企業情報ページのCTAセクション --- */
+.cta {
+  position: relative;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f9f7f4 100%);
+  overflow: hidden;
+}
+
+/* イラスト透かし（右下に固定） */
+.cta::before {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 180px;
+  height: 180px;
+  background: url("../image/illustration.png") no-repeat center/contain;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.cta h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--brown-main);
+  position: relative;
+}
+.course-price {
+  background: #fff;
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+
+
+.course-price .lead-text {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.05rem;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.price-table th,
+.price-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.price-table th {
+  width: 40%;
+  font-weight: 700;
+  background: #f8f8f8;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+#menu-toggle .bar {
+  height: 4px;
+}
+/* PC専用（幅768px以上） */
+@media (min-width: 768px) {
+  .access-info-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .access-info-wrapper {
+    max-width: 100%;
+    margin: 0;
+    padding-left: 30px; /* 左を広くして */
+    padding-right: 10px; /* 右を狭くする */
+  }
+}
+
+@media (max-width: 767px) {
+  /* 営業時間の「時刻」を右端に揃える */
+  .access-section .business-hours dd .time {
+    justify-self: end;   /* グリッド内で右端へ */
+    text-align: right;   /* 数字も右寄せで揃える */
+  }
+
+  /* 右列の幅調整（少しキュッとする） */
+  .access-section .business-hours dd {
+    grid-template-columns: 5.4em 1fr; /* 既存が5.6emなら少しだけ縮める */
+  }
+
+  /* 見出し列（「営業時間：」など）の幅も気持ち広げてバランス調整 */
+  .access-section .business-hours {
+    grid-template-columns: 6.2em 1fr; /* 既存が6.0前後なら+0.2emのイメージ */
+  }
+}
+@media (max-width: 767px) {
+  .access-map {
+    margin-bottom: 40px; /* マップ下に余白を追加 */
+  }
+}
+@media (min-width: 768px) {
+  .site-header {
+    padding-bottom: 0;
+  }
+}
+/* ==== アクセス（スマホ）：ラベルと時刻の間隔調整＆中央寄せ ==== */
+@media (max-width: 767px) {
+  .access-section .access-info .business-hours {
+    display: grid !important;
+    grid-template-columns: 5.6em 1fr !important; /* ラベル列を短く */
+    column-gap: 8px !important;                  /* 間隔を詰める */
+    row-gap: 2px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    justify-content: end !important; /* コンテンツを右寄せ */
+  }
+
+  .access-section .access-info .business-hours dt,
+  .access-section .access-info .business-hours dd {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .access-section .access-info .business-hours dd {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 0 8px !important; /* ラベルと時間の距離 */
+  }
+
+  .access-section .access-info .business-hours dd .label {
+    flex: 0 0 4.4em !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+  }
+
+  .access-section .access-info .business-hours dd .time {
+    flex: 0 0 auto !important;
+    text-align: left !important;
+  }
+}
+@media (max-width: 767px) {
+  .access-info p:last-of-type {
+    margin-top: 6px !important; /* 他の指定を強制的に上書き */
+  }
+}
+
+
+.nowrap { white-space: nowrap; }
+
+/* ==== FAQ v2（安全スコープ）: 1行回答・ぶら下げなし ==== */
+
+/* A. と本文はシンプルに横並び（既存の見た目は温存） */
+#faq.faq-v2 .faq-item { margin: 1rem 0; }
+
+#faq.faq-v2 .faq-answer {   /* <p> のデフォルトだけ整える */
+  margin: 0;
+}
+
+#faq.faq-v2 .faq-label {     /* A. ラベル */
+  font-weight: 600;
+  white-space: nowrap;
+  margin-right: .25em;       /* ぴったりが良ければ 0 に */
+}
+
+/* iPad（768×1024）縦向きだけ、FAQ全体を“ちょい右”へ */
+@media (min-width:768px) and (max-width:1024px) and (orientation:portrait){
+  #faq.faq-v2 {
+    padding-left: .8em;      /* 好みで .5em〜1.2em に調整 */
+    box-sizing: border-box;
+  }
+}
+
+
+/* legal 本文の長文/URL のはみ出し防止 */
+.legal-v2 { overflow-wrap: anywhere; }

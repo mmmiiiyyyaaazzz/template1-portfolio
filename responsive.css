@@ -1,0 +1,2668 @@
+
+
+/* =========================
+   基本スタイル
+========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  color: #4b3621;
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   ヘッダー
+========================= */
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* 会社名 */
+.header-h1 {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+/* 電話番号・FAX */
+.tel-fax-label {
+  color: #5c4a2f;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-right: 4px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.phone-number a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.phone-number a:hover {
+  color: #666666;
+  text-decoration: underline;
+}
+
+/* =========================
+   ナビゲーション（PC用）
+========================= */
+#menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  background-color: #5c4a2f;
+  height: 50px;
+  margin: 0;   /* ← 隙間防止 */
+  padding: 0;
+}
+
+#menu li {
+  margin: 0 15px;
+  padding: 10px 15px;
+  color: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+#menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  text-decoration: underline;
+}
+
+#menu li:hover {
+  background-color: #926b3b;
+}
+
+/* =========================
+   ハンバーガーメニュー（PCでは非表示）
+========================= */
+#menu-toggle {
+  display: none; /* PCでは非表示 */
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  z-index: 2000;
+}
+#menu-toggle .bar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #5c4a2f;
+  border-radius: 2px;
+}
+/* =========================
+   フッター
+========================= */
+.site-footer {
+  background-color: #5c4a2f;
+  color: #fff;
+  font-size: 14px;
+  padding: 40px 20px 20px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-logo,
+.footer-nav,
+.footer-social {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-company {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav li {
+  margin-bottom: 8px;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  min-width: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 100%;
+}
+
+.footer-social {
+  margin-top: 2px;
+}
+
+.follow-us-text {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-social img {
+  width: 50px;
+  height: 50px;
+  transition: opacity 0.3s ease;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.footer-social img:hover {
+  opacity: 0.7;
+}
+
+.footer-links {
+  margin-top: 20px;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.page-top-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #5c4334;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 13px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.page-top-fixed a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.page-top-fixed a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   スマホ・タブレット対応
+========================= */
+
+/* --- スマホ（767px以下） --- */
+@media (max-width: 767px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px 0px;
+    position: relative;
+  }
+
+  /* ハンバーガーメニュー（ボタン全体） */
+   #menu-toggle {
+    display: flex;
+    width: 40px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transform: none;
+  }
+
+  /* 棒1本ごとの見た目 */
+  #menu-toggle .menu-bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 6px 0;
+    background-color: #333;
+    border-radius: 2px;
+  }
+
+  #menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 9999;
+    padding: 0;
+    margin: 0;
+  }
+
+  #menu.active {
+    display: flex;
+  }
+
+  #menu li {
+    width: 100%;
+    padding: 15px 40px;
+    text-align: left;
+    border-bottom: 2px solid #ccc;
+    background-color: #5c4a2f;
+  }
+
+  #menu li:last-child {
+    border-bottom: none;
+  }
+
+  .fancy-button,
+  button.fancy-button {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+
+  .work-environment h2 {
+    text-align: center;
+    padding: 0;
+  }
+
+  .work-environment .work-text {
+    text-align: left;
+    padding: 0 25px;
+  }
+}
+
+/* PCでは br.sp-only を非表示 */
+br.sp-only {
+  display: none;
+}
+
+/* スマホでは表示 */
+@media (max-width: 767px) {
+  br.sp-only {
+    display: inline;
+  }
+}
+
+/* --- iPadサイズ(768px〜1024px)：中央揃え --- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .work-environment h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .work-environment .work-text {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 25px;
+  }
+}
+@media (max-width: 767px) {
+  #menu-toggle {
+    display: flex;
+    width: 40px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  #menu-toggle .menu-bar {
+    flex: none;
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 6px 0;
+    background-color: #5c4a2f; /* 元の色 */
+    border-radius: 2px;
+  }
+}
+@media (max-width: 767px) {
+  #menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute; /* headerを基準に */
+    top: 180px;          /* headerの下に出す */
+    left: 0;
+    z-index: 9999;
+    padding: 0;
+    margin: 0;
+  }
+  #menu.active {
+    display: flex;  
+    z-index: 99999;     /* 開いたときに表示 */
+    background: #5c4a2f;
+  }
+}
+@media (max-width: 767px) {
+  .header-h1 h1 {
+    margin-top: 20px;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  .contact-link {
+    line-height: 1.3;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .contact-link p {
+    margin: 4px 0;
+  }
+  .contact-link .contact a {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 767px) {
+  .phone-number {
+    display: flex;
+    justify-content: center;  /* 全体を中央寄せ */
+    align-items: center;
+    gap: 3px;                /* ラベルと番号の間隔 */
+    margin: 4px 0;
+  }
+  .phone-number .tel-fax-label {
+    font-weight: bold;
+    font-size: 1rem;
+    min-width: 70px;          /* ラベル幅を揃えて整列 */
+    text-align: right;        /* ラベルは右寄せ */
+  }
+  .phone-number a {
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+}
+@media (max-width: 767px) {
+  .contact-link p:last-child {
+    margin-bottom: 5px; /* ←今より狭く */
+  }
+}
+@media (max-width: 767px) {
+  /* ハンバーガーメニュー全体を小さめに */
+  #menu-toggle {
+    width: 30px;   /* 横幅さらに小さく */
+    height: 20px;  /* 高さを縮める（線間隔が自然に狭まる） */
+    top: 15px;
+    right: 15px;
+  }
+
+  /* 三本線1本あたりをさらに細く */
+  #menu-toggle .menu-bar {
+    height: 2px;   /* 太さ2px（細め） */
+    margin: 4px 0; /* 間隔狭め（通常6px→4px） */
+  }
+}
+@media (max-width: 767px) {
+  .hero-text {
+    position: static;           /* 絶対配置解除（スマホは通常フロー） */
+    margin: 20px auto;          /* 自動で中央揃え */
+    max-width: 100%;             /* 画面幅に合わせる */
+    padding: 16px 20px;         /* 少しコンパクトに */
+    text-align: center;         /* 中央寄せ */
+  }
+  .hero-text h1 {
+    font-size: 1.3rem;          /* 見出しを少し小さく */
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+  .hero-text p {
+    font-size: 0.95rem;   
+    line-height: 1.5;      /* 本文を少し小さく */
+  }
+}
+@media (max-width: 767px) {
+  .facility-intro-flex {
+    display: block; /* 横並び → 縦並び */
+  }
+  .facility-intro-image,
+  .facility-intro-text {
+    width: 100%; /* 画像もテキストも全幅 */
+  }
+  .facility-intro-text p {
+    width: 91%;
+    text-align: left; /* 説明文を中央寄せ */
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-weight: 550;
+  }
+  .facility-intro-image img {
+    margin-bottom: 25px;
+  }
+
+}
+@media (max-width: 767px) {
+  .course-card h3,
+  .service-card h3 {
+    font-size: 1.4rem;
+    padding-bottom: 0;
+  }
+  .course-card p,
+  .service-card p {
+    margin-top: 0;
+  }
+  
+}
+@media (max-width: 767px) {
+  .course-card,
+  .service-card {
+    width: 90%;          /* 幅を画面の9割に広げる */
+    margin: 0 auto 20px; /* 中央寄せ & 下余白 */
+  }
+  .course-card img,
+  .service-card img {
+    height: auto;        /* 高さを自動調整 */
+  }
+}
+@media (max-width: 767px) {
+  .flow-steps {
+    display: block; /* 横並び → 縦並び */
+  }
+  .flow-step {
+    width: 100% !important;      /* 横幅広げる */
+    margin: 0 auto 20px !important; /* 中央寄せ & 下余白 */
+    padding: 20px;              /* paddingは残す（見栄え用） */
+  }
+}
+@media (max-width: 767px) {
+  .faq-list {
+    width: 75%;
+    text-align: left;
+    margin: 0 auto;
+  }
+  .faq-item h3 {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .access-wrapper {
+    display: block;
+  }
+ 
+}
+@media (max-width: 767px) {
+  .page-top-fixed {
+    bottom: 60px; /* ← 少し上に移動 */
+    right: 15px;
+  }
+}
+/* タブレット〜PCで沿革を揃えて見せたい場合（任意） */
+@media (min-width: 767px) {
+  /* 年を横並びの見出しっぽく（2カラム風） */
+  .history-list li {
+    display: grid;
+    grid-template-columns: 10em 1fr; /* 左に年の列、右に本文 */
+    column-gap: 12px;
+    align-items: start;
+  }
+  .history-list .year {
+    display: block;         /* そのまま左カラムに表示 */
+    margin-bottom: 0;
+    text-align: right;      /* 年を右寄せにしても見やすい */
+  }
+}
+
+/* ===== company.html スマホサイズ調整 ===== */
+@media (max-width: 767px) {
+
+  /* 見出し中央揃え */
+  .company-detail h2,
+  .company-vision h2,
+  .company-history h2 {
+    text-align: center;
+    margin: 0 auto 24px;
+  }
+
+  /* テーブル見出しの改行防止 */
+  .company-table th {
+    white-space: nowrap;
+    width: 8em; /* 必要に応じて調整 */
+  }
+
+  /* 理念・ビジョンの本文幅を少し狭く */
+  .company-vision p {
+    max-width: 90%; /* 画面幅の90%に制限 */
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* 沿革：年と本文を2行表示 */
+  .history-list .year {
+    display: block; /* 年を上段に固定 */
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  @media (max-width: 767px) {
+
+  /* テーブル全体の幅と中央寄せ */
+  .company-table {
+    width: 90% !important;  /* 強制的に90% */
+    margin: 0 auto;         /* 中央寄せ */
+    border-collapse: collapse; /* 枠の隙間なし */
+  }
+
+  /* セルの余白を狭める */
+  .company-table th,
+  .company-table td {
+    padding: 6px 8px; /* 上下6px, 左右8px */
+    word-break: keep-all; /* 変な改行を防ぐ */
+  }
+  .company-table th {
+    font-size: 1.1rem; /* 16px相当。好みに合わせて調整可能 */
+    font-weight: bold;
+  }
+  .company-detail {
+    margin-bottom: 30px;
+  }
+  .company-detail h2,
+  .company-history h2 {
+    letter-spacing: .05rem;
+    font-size: 1.6em;
+  }
+  .company-vision span {
+    text-align: center;
+    font-weight: 580;
+    font-size: 1.2rem;
+    display: block;
+  }
+
+  .company-vision {
+    text-align: left;
+    margin: 0 0 0 15px;
+  }
+ .history-list {
+  width: 90%; /* 余白を5%ずつに */
+  text-align: left;
+  margin: 0 auto;
+ }
+ .cta.cta-illustration h2 {
+    font-size: 1.8rem;
+    line-height: 1.35;
+  }
+
+}
+
+}
+/* PCでだけ改行表示 */
+@media (max-width: 767px) {
+  .pc-only {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .hero-course .hero-text p {
+    word-break: normal; /* 通常の改行に戻す */
+    white-space: normal; /* 強制的に一行にしない */
+  }
+}
+
+/* モバイルだけカード風をやめてフラット化 */
+@media (max-width:767px) {
+  .course-detail{
+    background: transparent;   /* 白背景を外す */
+    box-shadow: none;          /* 影を外す */
+    border-radius: 0;          /* 角丸を外す */
+    padding: 0;                /* 内側の空きナシに */
+    width: 95%;
+    margin: 0 auto;         /* セクション間の余白は外側だけで管理 */
+  }
+  .course-detail h2 {
+    text-align: center;
+    display: block;
+    font-size: 1.5rem;
+  }
+  /* 画像とテキストの縦リズムは控えめに */
+  .course-flex{ 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px;                  /* 12pxが広く見えるなら8pxから */
+  }
+
+  /* テキスト側の下ぶくれ回避（必要最小限だけ残す） */
+  .course-text{
+    display: flow-root;
+    padding: 0;
+    width: 85%;          /* 幅を90%に */
+    text-align: left;    /* 文字は左寄せ */
+    margin: 0 auto;      /* 横方向中央寄せ */
+  }
+
+  #yoga {
+    margin-top: 80px;
+  }
+  .course-text ul{
+  list-style: none;     /* 既存の丸点を消す */
+  margin: 0;
+  padding: 0;
+}
+
+.course-text li{
+  display: flex;
+  align-items: flex-start;
+  gap: .5em;            /* アイコンと文字の隙間 */
+  border-bottom: 1px dotted rgba(0,0,0,.2);
+  padding-bottom: .3em;
+  margin-bottom: .4em;
+  line-height: 1.55;
+}
+/* チェックマーク本体 */
+.course-text li::before{
+  content: "✓";
+  flex: 0 0 1.1em;      /* ← アイコン用の固定幅カラム */
+  margin-top: .1em;     /* 縦位置微調整 */
+  font-weight: 700;
+  color: #B1907F;       /* カフェラテ色 */
+}
+
+  #muscle .course-text p{
+    padding-left: 22px;
+  }
+  
+  .course-text .lead-text{
+    margin-bottom: 1em; /* 例：フォントサイズ依存に変更 */
+  }
+  .course-price {
+    margin-top: 0;
+    text-align: center;
+  }
+  .container .lead-text {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .price-table,
+  .price-table tbody,
+  .price-table tr,
+  .price-table th,
+  .price-table td {
+    display: block;       /* 全部ブロック化して縦積み */
+    width: 100%;          /* 横幅いっぱいに */
+    text-align: center;  
+  }
+
+  .price-table th {
+    background: #f5f0eb;  /* 見やすくするための背景色（任意） */
+    padding: 8px;
+    font-weight: bold;
+  }
+  .price-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc; /* 区切り線（任意） */
+  }
+
+  /* 行間隔を付けたい場合 */
+  .price-table tr {
+    margin-bottom: 12px; /* 行ごとの間隔 */
+  }
+.course-price h2 {
+  border-bottom: 2px solid #B1907F; /* カフェラテ色 */
+  display: inline-block;
+  padding-bottom: 4px;
+  text-align: center;
+}
+.cta-course p {
+  line-height: 1.4;
+}
+
+}
+
+@media (max-width: 1024px) {
+  .instagram-section {
+    padding: 48px 20px;
+  }
+}
+
+/* スマホサイズで幅を狭めて読みやすく */
+@media (max-width: 767px) {
+  .instagram-section {
+    width: 90%;
+    padding: 36px 16px;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+ .instagram-section .button-wrap {
+  text-align: center;
+}
+  .instagram-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .instagram-section p {
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+  .hero.hero-instagram {
+    background-position: center; /* 横も縦も中央 */
+    height: 80vh;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero.hero-instagram {
+    background-position: center;
+  }
+}
+/* タブレット以下で少し詰める */
+@media (max-width:1024px){
+  .thanks-section{ padding: 64px 20px; }
+}
+
+/* スマホ */
+@media (max-width:767px){
+  .thanks-section{
+    width: 100%;
+    padding: 48px 16px;
+  }
+  .thanks-section h1{ font-size: 1.5rem; }
+}
+@media (max-width: 767px) {
+  .terms-section {
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+  }
+  .terms-section h1 {
+    text-align: center;
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .privacy-section {
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+  }
+  .privacy-section h1 {
+    text-align: center;
+    display: block;
+  }
+}
+/* 768px以下：フッターは縦並び */
+@media (max-width:767px){
+  .site-footer { text-align: center; }
+
+  .site-footer .footer-inner{
+    display: flex;
+    flex-direction: column;   /* ← 縦並び */
+    align-items: center;      /* 中央寄せ */
+    gap: 16px;                /* セクション間の間隔 */
+  }
+
+  .footer-logo,
+  .footer-nav,
+  .footer-right{
+    width: 100%;
+  }
+
+  /* フッターメニューを中央配置＆折り返し */
+  .footer-nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .footer-nav li{ margin: 0; }
+
+  /* SNSやリンクの横並びを中央で維持 */
+  .footer-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+@media (max-width:1024px) {
+  .container p {
+    width: 80%;
+    text-align: left;
+    margin: 0 auto;
+  }
+}
+.tab-only {
+  display: none;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tab-only {
+    display: inline;
+  }
+}
+/* 768–1024px: ヒーロー文字と余白を微調整 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero { padding-block: clamp(48px, 8vw, 80px); }
+  .hero h1 { font-size: clamp(28px, 3.2vw, 36px); line-height: 1.25; }
+  .hero .lead-text { font-size: clamp(15px, 1.8vw, 18px); line-height: 1.75; max-width: 52ch; }
+  /* タブレット改行を活かす */
+  .hero br.tab-only { display: inline; }
+}
+/* 768–1024px: ナビの左右余白と隙間最適化 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .site-header { padding-inline: clamp(16px, 3vw, 28px); }
+  .gnav ul { gap: clamp(8px, 1.6vw, 16px); }
+  .gnav a { font-size: clamp(14px, 1.7vw, 16px); padding: .6em .8em; }
+  /* ロゴが大きすぎる場合のみ */
+  .logo { max-width: clamp(140px, 22vw, 200px); }
+}
+/* 768–1024px: カードが窮屈にならない幅とギャップ */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cards { 
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    gap: clamp(12px, 2.4vw, 24px);
+  }
+  .card { padding: clamp(14px, 2.2vw, 20px); }
+  .card h3 { font-size: clamp(18px, 2.2vw, 22px); }
+  .card p { font-size: clamp(14px, 1.8vw, 16px); line-height: 1.7; }
+  .card img { aspect-ratio: 16/9; object-fit: cover; }
+}
+/* 768–1024px: ボタン大きめ・行間ゆったり */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cta .btn,
+  .btn-primary {
+    font-size: clamp(14px, 1.9vw, 17px);
+    padding: .9em 1.4em;
+    min-width: 180px;
+  }
+  .contact-summary { font-size: clamp(14px, 1.8vw, 16px); line-height: 1.8; }
+}
+/* 768–1024px: セクションの上下余白を統一 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  section { padding-block: clamp(40px, 7vw, 72px); }
+  section .section-title { margin-bottom: clamp(16px, 3vw, 28px); }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .site-footer { padding-block: clamp(28px, 5vw, 48px); }
+  .footer-nav a { font-size: clamp(13px, 1.7vw, 15px); }
+  .sns-icons img,
+  .sns-icons svg { width: clamp(18px, 2.4vw, 22px); height: auto; }
+}
+/* スマホ：ヒーロー見出しの可読性アップ */
+@media (max-width: 767px) {
+  .first-block h2 {
+    font-size: clamp(20px, 6vw, 24px);
+    line-height: 1.35;
+    letter-spacing: .02em;
+    text-wrap: balance; /* 対応ブラウザで自然な折返し */
+  }
+  /* 「スマホでは任意の <br> を隠したい」場合 */
+  .first-block h2 br.sp-only { display: inline; }   /* ←入れてるなら活かす */
+  .first-block h2 br.tab-only { display: none; }    /* 念のため明示 */
+}
+@media (max-width: 767px) {
+  .service-card p {
+    line-height: 1.85;
+    text-align: left;
+  }
+  .service-card p br { display: none; } /* 不要な改行を消す */
+}
+@media (max-width: 767px) {
+  .flow-section .flow-step p {
+    line-height: 1.85;
+  }
+  .flow-section .flow-step p br { display: none; }  /* スマホでは自動改行に任せる */
+}
+@media (max-width: 767px) {
+  /* 営業時間：スマホでの横ズレ修正＆左右バランス */
+  .access-section .business-hours dd {
+    grid-template-columns: 4.5em auto; /* 右列はautoで膨らまない */
+    gap: 0 10px;                        /* 列間 */
+    padding: 0 12px;                    /* 左右は均等に（片側だけ増やさない） */
+  }
+  .access-section .business-hours dd .time {
+    justify-self: start;                /* 右端寄せを解除 */
+    text-align: left;
+  }
+}
+
+
+/* 幅がさらに厳しい端末向け：ラベルをもう少し詰め、時刻を微縮小 */
+@media (max-width: 390px){
+  .access-section .business-hours dd{ grid-template-columns: 5.2em 1fr; }
+  .access-section .business-hours dd .time{ font-size: 0.95em; }
+}
+
+
+/* 見出しの基準（スマホ） */
+@media (max-width: 767px) {
+  /* h3基準を少し小さめに（例） */
+  h3 { font-size: 18px; line-height: 1.35; }
+
+  /* h2は h3 より少しだけ大きい。改行させない */
+  .section h2,
+  .section-bg h2 {
+    font-size: 20px;        /* 22pxが窮屈なら20px推奨 */
+    line-height: 1.3;
+    white-space: nowrap;     /* 改行しない */
+    overflow: hidden;        /* 万一のはみ出し防止 */
+    text-overflow: ellipsis; /* 超過時に…（滅多に出ない想定） */
+    letter-spacing: .02em;
+  }
+}
+@media (max-width: 767px) {
+  .footer-nav ul {
+    display: flex;
+    flex-direction: column; /* ←縦並び */
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .footer-nav li { margin: 0; }
+  .footer-nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    /* 余白は任意で */
+    padding: 0;
+  }
+}
+
+@media (max-width: 767px){
+  .access-section .business-hours dd{
+    grid-template-columns: 5.6em 1fr;  /* style.css と同じ値で統一 */
+    gap: 0 10px;
+  }
+}
+
+/* さらに狭い端末の保険（必要なら） */
+@media (max-width: 390px){
+  .access-section .business-hours dd{ grid-template-columns: 5.2em 1fr; }
+  .access-section .business-hours dd .time{ font-size: .95em; }
+}
+/* ===== Access：情報をきれいに2列揃え ===== */
+
+/* 左：見出し（所在地/最寄り駅/…）｜右：内容 の2列 */
+.access-section .access-info p{
+  display: grid;
+  grid-template-columns: 6em 1fr;   /* ラベル固定幅｜本文 */
+  column-gap: 12px;
+  row-gap: 8px;
+  margin: 0 0 6px;
+  text-align: left;
+}
+.access-section .access-info p strong{
+  white-space: nowrap;              /* 「所在地：」などを折り返さない */
+}
+
+/* 営業時間ブロック：左1列目=「営業時間：」、右2列目=各行 */
+.access-section .business-hours{
+  display: grid;
+  grid-template-columns: 6em 1fr;   /* 左: 見出し｜右: 内容 */
+  column-gap: 12px;
+  row-gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+}
+.access-section .business-hours dt{
+  grid-column: 1;
+  margin: 0;
+  white-space: nowrap;
+}
+.access-section .business-hours dd{
+  grid-column: 2;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 5.6em 1fr; /* 右側の中で〔ラベル｜時刻〕 */
+  column-gap: 10px;
+  align-items: start;
+}
+.access-section .business-hours dd .label{
+  white-space: nowrap;              /* 「平日」「土日祝」を折り返さない */
+}
+.access-section .business-hours dd .time{
+  white-space: nowrap;              /* 時刻も折り返さない */
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  min-width: 0;
+}
+
+/* 画面がかなり狭い端末の微調整（iPhone mini 等） */
+@media (max-width: 390px){
+  .access-section .access-info p{
+    grid-template-columns: 5.4em 1fr;
+  }
+  .access-section .business-hours{
+    grid-template-columns: 5.4em 1fr;
+  }
+  .access-section .business-hours dd{
+    grid-template-columns: 5.0em 1fr;
+  }
+}
+
+
+/* === Access：スマホはもうひと押しで詰める === */
+@media (max-width: 767px) {
+  .access-section .business-hours dd {
+    grid-template-columns: 4.8em auto; /* ラベル列も少し細く */
+    column-gap: 6px;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .section-title { text-align: center; margin-bottom: 16px; }
+
+  /* ここを「p.h2-sub」にして .section p より強くする */
+  .section p.h2-sub,
+  .section-bg p.h2-sub,
+  .section-title p.h2-sub {
+    font-size: .95rem;
+    color: #7a6e66;
+    letter-spacing: .02em;
+    text-align: center;
+    display: inline-block;
+    margin-top: 0;          /* ← これが通るようになります */
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* コース詳細のレイアウトを縦並び＆中央寄せ */
+  body#course-page .course-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px; /* 画像とテキストの間に余白 */
+  }
+
+  /* 画像を小さくして中央寄せ（元サイズ以上に拡大しない） */
+  body#course-page .course-flex img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* h2も画像幅に合わせて中央揃え */
+  body#course-page .course-detail h2 {
+    max-width: 90%;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+}
+
+/* === SP: index.html の h2 共通（.h2-main は除外）=== */
+@media (max-width: 767px) {
+  body#index-page h2:not(.h2-main) {
+    font-size: clamp(20px, 5.6vw, 22px);
+    line-height: 1.3;
+    letter-spacing: .02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    text-align: center;
+  }
+  /* sp-only の改行を有効化したい場合 */
+  body#index-page h2 br.sp-only { display: inline; }
+}
+
+/* === SP: .h2-main（上下ライン・はみ出し可 ＋ 同じフォントサイズを明示）=== */
+@media (max-width: 767px) {
+  /* ※ index.html でも .h2-main に同サイズを明示して競合に勝つ */
+  body#index-page .h2-main {
+    font-size: clamp(20px, 5.6vw, 22px);
+    line-height: 1.3;
+    letter-spacing: .02em;
+    text-align: center;
+  }
+
+  .h2-main {
+    position: relative;
+    display: block;          /* 文字幅基準で扱う */
+    width: max-content;      /* 文字幅ぴったり */
+    margin: 0 auto;          /* 中央寄せ */
+    padding: 0.6em 0;        /* ラインとの距離 */
+    color: var(--brown-main);
+  }
+  @supports not (width: max-content) {
+    .h2-main { display: inline-block; }
+  }
+
+  /* .section 系でかかる overflow 隠しを解除（#contact 内も確実に見せる） */
+  .section .h2-main,
+  .section-bg .h2-main,
+  body#index-page .h2-main {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: nowrap;
+  }
+
+  /* ライン長の調整（左右合計ぶん） */
+  .h2-main { --h2-extend: 1.2em; } /* 例：左右0.6emずつ延長 */
+
+  .h2-main::before,
+  .h2-main::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + var(--h2-extend));
+    height: 2px;
+    background: #cbb6a0;
+    pointer-events: none;
+  }
+  .h2-main::before { top: 0; }
+  .h2-main::after  { bottom: 0; }
+}
+@media (max-width: 767px) {
+  .course-price .note {
+    text-align: center;   /* 中央寄せ */
+    white-space: nowrap;  /* 改行させない */
+    font-size: 0.85rem;   /* 少し小さめ（必要なければ消してOK） */
+    margin-top: 8px;      /* 上の余白を少し確保 */
+  }
+}
+
+@media (max-width: 767px) {
+  /* --- company.html 専用 スマホ用調整 --- */
+
+  /* セクションごとに余白＋下線で区切り */
+  .company-wrapper section {
+    padding: 24px 0 60px;
+    border-bottom: 1px solid #e0d9d2;
+  }
+  .company-wrapper section:last-child {
+    border-bottom: none; /* 最後のセクションだけ線なし */
+  }
+
+  /* h2 の見た目（スマホは中央＆少し大きめ） */
+  .company-wrapper h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: var(--brown-main);
+  }
+
+  /* 会社概要テーブル */
+  .company-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .company-table th,
+  .company-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  .company-table th {
+    width: 30%;
+    background: #f8f4f2;
+    color: #555;
+    font-weight: 600;
+  }
+
+  /* 理念・ビジョン */
+  .company-vision p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #444;
+    text-align: center;
+  }
+  .company-vision p span {
+    display: block;
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: var(--brown-main);
+  }
+
+
+}
+@media (max-width: 767px) {
+  /* 理念・ビジョン：全幅・超控えめ背景・角丸なし */
+  .company-wrapper section.company-vision {
+    width: 100%;
+    margin: 0;
+    padding: 18px 0;          /* 他の強い指定(24px 0 60px)より後に置いて上書き */
+    background: #faf7f4;      /* かなり淡いクリーム。濃いなら #f8f4f2 に */
+    border-radius: 0;
+    text-align: center;        /* セクション全体は中央 */
+  }
+
+  /* 直下要素は中央に寄せる（左右への片寄り防止） */
+  .company-wrapper section.company-vision > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 見出しは中央。h2 / .h2-main どちらでも対応 */
+  .company-wrapper section.company-vision h2,
+  .company-wrapper section.company-vision .h2-main {
+    margin-bottom: 10px;
+  }
+
+  /* 本文は“中央配置の箱”の中で左寄せに */
+  .company-wrapper section.company-vision > p > span:first-child {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+  /* 本文だけ左に戻す場合 */
+  .company-wrapper section.company-vision > p {
+    text-align: left;
+    max-width: 90%;
+    margin: 0 auto;
+    padding-left: 24px;
+  }
+
+
+  /* キャッチコピー：装飾なし。必ず改行して少し間を空ける */
+  .company-wrapper section.company-vision > p > span:first-child {
+    display: block;        /* ← 改行を強制 */
+    font-weight: 700;
+    font-size: 1.05rem;    /* 本文よりほんの少しだけ大きく */
+    letter-spacing: .02em;
+    margin-bottom: 6px;    /* キャッチと本文の間隔 */
+  }
+}
+@media (max-width: 767px) {
+  /* 理念・ビジョンだけは区切り線を消す */
+  .company-wrapper section.company-vision {
+    border-bottom: none;
+  }
+}
+@media (max-width: 767px) {
+  /* 直後が .company-vision のとき、その直前セクションの線を消す */
+  .company-wrapper section:has(+ .company-vision) {
+    border-bottom: none !important;
+  }
+
+  /* 念のため .company-vision 自体にも線を描かせない */
+  .company-wrapper section.company-vision {
+    border-bottom: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .company-vision p {
+    text-align: center;       /* ← テキスト全体を中央揃え */
+    max-width: 90%;           /* ← 画面幅の90%に制限して両端に余白 */
+    margin: 0 auto;           /* ← 中央配置 */
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #444;
+  }
+  .company-vision p span {
+    display: block;
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    color: var(--brown-main);
+  }
+}
+@media (max-width: 767px) {
+  .company-wrapper section.company-vision {
+    padding: 60px 0;  /* 上下40px、左右0。お好みで数値を調整 */
+  }
+}
+@media (max-width: 767px) {
+  /* 沿革リスト全体：端から少し内側に寄せる */
+  .company-wrapper .history-list {
+    list-style: none;
+    margin: 0 auto;
+    max-width: 92%;
+    padding-left: 30px; /* 左端からのオフセット */
+  }
+
+  .company-wrapper .history-list li {
+    position: relative;
+    padding-left: 16px;   /* ← 縦線と文字の距離を確保 */
+    margin: 8px 0;
+    line-height: 1.6;     /* 行の高さを安定させる */
+    font-size: 0.95rem;
+    list-style: none;
+  }
+
+  .company-wrapper .history-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;            /* ← 上余白を少し開ける */
+    height: 1.6em;         /* ← 行よりやや短めの高さを指定 */
+    width: 3px;
+    background: rgba(150, 100, 60, 0.85); /* 少し濃いめの茶色 */
+    border-radius: 1px;
+  }
+
+  .company-wrapper .history-list .year {
+    font-weight: bold;
+    color: var(--brown-main);
+    margin-right: 6px;
+  }
+
+}
+@media (max-width: 767px) {
+  /* 沿革セクション：上だけ色つきで余白を広げる */
+  .company-wrapper section.company-history {
+    /* 背景色を付けている前提。必要なら指定してください */
+    /* background: var(--history-bg, #f8f4f2); */
+
+    padding: 48px 0 40px;  /* ← 上48pxに増量（数値はお好みで） */
+    /* margin-top は使わない。合体するので */
+  }
+
+  /* h2の上マージンは消して padding と二重にならないように */
+  .company-wrapper section.company-history h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .work-environment h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .work-environment .work-text {
+    padding: 0 20px 0 32px; /* 左だけ少し広げる（微調整） */
+  }
+}
+
+/* ===== Tablet: 768–1024px ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* 共通レイアウトの余白と行長 */
+  .section, .section-bg .section { padding: 32px 0; }
+  .container, .section, .company-wrapper { width: min(92vw, 960px); margin: 0 auto; }
+
+  /* スマホ限定の h2装飾を出さない（安全網） */
+  .h2-main::before, .h2-main::after { display: none; }
+
+  /* index: カード2列 */
+  .service-cards, .course-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .facility-intro-flex { display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; align-items: center; }
+
+  /* アクセス：横並び */
+  .access-wrapper { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; align-items: start; }
+  .access-map iframe { width: 100%; height: 360px; }
+
+  /* course: 画像左・テキスト右に戻す */
+  .course-flex { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center; }
+  .course-flex img { width: 100%; height: auto; }
+
+  .price-table th, .price-table td { padding: 12px 14px; font-size: 1rem; }
+
+  /* company: テーブル・本文の読みやすさ */
+  .company-table th, .company-table td { padding: 10px 12px; font-size: 1rem; }
+  .company-vision { padding: 36px 0; }
+  .company-vision > p { max-width: 760px; margin: 0 auto; line-height: 1.9; }
+
+  /* 沿革：行間/インデント微調整（縦線はスマホ設定を継承するなら触らなくてOK） */
+  .history-list { max-width: 760px; margin: 0 auto; padding-left: 26px; }
+  .history-list li { margin: 8px 0; line-height: 1.75; }
+
+  /* recruit: 右寄せ加減を少し戻す */
+  .work-environment .work-text { padding: 0 28px 0 40px; }
+}
+
+/* ===== PC: 1025px〜 ===== */
+@media (min-width: 1025px) {
+  .container, .section, .company-wrapper { width: min(88vw, 1080px); margin: 0 auto; }
+  .section, .section-bg .section { padding: 40px 0; }
+
+  /* 見出しラインはPCでは出さない */
+  .h2-main::before, .h2-main::after { display: none; }
+
+  /* index: カード3列 */
+  .service-cards, .course-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .facility-intro-flex { grid-template-columns: 1.2fr 1fr; gap: 28px; }
+
+  .access-wrapper { grid-template-columns: 1.2fr 1fr; gap: 24px; }
+  .access-map iframe { height: 420px; }
+
+  /* course */
+  .course-flex { grid-template-columns: 1.2fr 1fr; gap: 28px; }
+  .price-table th, .price-table td { padding: 14px 16px; }
+
+  /* company */
+  .company-vision { padding: 44px 0; }
+  .company-vision > p, .history-list { max-width: 820px; }
+
+  /* recruit */
+  .work-environment .work-text { padding: 0 28px 0 48px; }
+}
+/* ===== iPad: 768–1024px ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* ヘッダーの左右余白をゼロにして帯を端まで */
+  .site-header {
+    padding-inline: 0 !important;  /* ← 899行の指定を打ち消す */
+  }
+
+  /* 帯色は nav に。帯は全幅のまま */
+  .site-header nav {
+    /* 必要なら帯色ここに指定 */
+    /* background: var(--brown-main); */
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* 中身だけ中央の内容幅に収める */
+  .site-header .header-inner,
+  .site-header nav ul#menu {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 8px 16px;      /* 中身の息継ぎ */
+    box-sizing: border-box;
+  }
+  .site-header nav ul#menu { padding-top: 0; padding-bottom: 0; }
+
+  /* お問い合わせブロックを右端へ寄せる */
+  .contact-link {
+    margin-left: auto;
+    text-align: right;
+    padding-right: 0;       /* ここに余白があると“少し離れる”原因に */
+  }
+  .contact-link .contact a { display: inline-block; }
+}
+/* responsive.css に追加 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .section-bg.first-block p {
+    max-width: 90%;         /* 横幅をちょっと狭めて */
+    margin: 0 auto;
+    text-align: left;       /* 本文は左揃えのまま */
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .facility-intro-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px; /* 余白少し広めに */
+  }
+
+  .facility-intro-image img {
+    width: 100%;        /* 横幅いっぱいに広げる */
+    max-width: none;    /* ← 800px の上限を解除！ */
+    height: auto;
+    display: block;
+  }
+
+  .facility-intro-text {
+    max-width: 90%;
+    margin: 0 auto;     /* 中央寄せ */
+    padding: 0 24px;    /* 端にベタ付き防止 */
+  }
+
+  .facility-intro-text p {
+    font-weight: 600;   /* 500より少し太めに */
+    line-height: 1.8;
+  }
+}
+/* iPad幅：facility-intro をフルブリードにして画像を親いっぱいに */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* セクション自体をビューポート幅にして、中央のコンテナ制限を外す */
+  .section.facility-intro {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* ラッパーもフル幅化 */
+  .facility-intro-flex,
+  .facility-intro-image {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* 画像をフル幅。ほかで max-width が効いている可能性を潰す */
+  .facility-intro .facility-intro-image img {
+    width: 100%;
+    max-width: none !important; /* ← 一時的に強制。犯人特定できたら !important は外しましょう */
+    height: auto;
+    display: block;
+  }
+
+  /* テキストは読みやすい幅で中央寄せ */
+  .facility-intro-text {
+    width: min(92vw, 960px);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .facility-intro-text p {
+    font-weight: 600;
+    line-height: 1.8;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .facility-intro-image {
+    padding: 0 40px; /* 余白を入れる。40pxに増やしても◎ */
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* h2: 元の1.8remをベースに、iPadでは少し強調 */
+  .facility-intro h2 {
+    font-size: 2.4rem;     /* 約32pxにアップ */
+    line-height: 1.4;
+  }
+
+  /* 本文（pとli）: 少し大きめに統一 */
+  .facility-intro-text li {
+    font-size: 20px;     /* 17px → 18pxにUP */
+    line-height: 1.8;
+  }
+  .facility-intro-text p {
+    font-size: 22px;     /* 17px → 18pxにUP */
+    line-height: 1.8;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* h2: iPadでは少し強調 */
+  .first-block h2 {
+    font-size: 2.2rem;   /* 約32px */
+    line-height: 1.4;
+  }
+
+  /* 本文: p要素を20pxに */
+  .first-block p {
+    font-size: 20px;
+    line-height: 1.8;
+  }
+}
+
+/* デフォルトでは非表示 */
+.tab-only {
+  display: none;
+}
+
+/* iPadだけ表示 */
+.tab-only { display: none; }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tab-only { display: block; }
+}
+
+/* 既にある想定：tab-only は iPadだけ表示 */
+.tab-only { display: none; }
+@media (min-width: 768px) and (max-width: 1024px) { .tab-only { display: block; } }
+
+/* ── 表示制御 ─────────────────────────── */
+.tab-only { display: none; }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tab-only { display: block; }
+
+  /* iPadは2列グリッド（既に他で定義があれば重複不要） */
+  .course-cards, .service-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+/* ===============================
+   iPad専用：CTAカードの調整
+   =============================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* CTAカードのボタンを確実に“普通の小ぶりボタン”へ */
+  .course-card.cta-card a.fancy-button,
+  .service-card.cta-card a.fancy-button {
+    display: inline-block !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+    flex: 0 0 auto !important;
+    align-self: center !important;
+    margin: 20px 0 0 !important;
+
+    position: relative !important;
+    overflow: hidden !important;
+    border: none !important;
+    box-sizing: border-box !important;
+
+    padding: 10px 20px !important;
+    border-radius: 30px !important;   /* ← 角は軽めに丸める */
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    text-align: center !important;
+
+    background-color: var(--button-main, #b68c68) !important;
+    color: var(--text-light, #fff) !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,.2) !important;
+  }
+
+  /* hover色 */
+  .course-card.cta-card a.fancy-button:hover,
+  .service-card.cta-card a.fancy-button:hover {
+    background-color: #a67c58 !important;
+  }
+
+  /* 擬似要素の完全停止 */
+  .course-card.cta-card a.fancy-button::before,
+  .course-card.cta-card a.fancy-button::after,
+  .service-card.cta-card a.fancy-button::before,
+  .service-card.cta-card a.fancy-button::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* 通常リンクを初期化 */
+  .course-card.cta-card a:not(.fancy-button),
+  .service-card.cta-card a:not(.fancy-button) {
+    display: inline !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+  }
+
+  /* CTAカード内のSNS案内 */
+  .cta-card .sns-box {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .cta-card .sns-text {
+    margin: 0 0 6px;
+    color: #555;
+    font-weight: 700;
+  }
+  .cta-card .instagram-link {
+    color: #e1306c;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .cta-card .instagram-link:hover {
+    text-decoration: underline;
+  }
+  /* CTAカード内のInstagramアイコン */
+.cta-card .sns-icon {
+  margin-top: 8px;       /* テキストリンクとの距離感 */
+  text-align: center;    /* 中央配置 */
+}
+
+.cta-card .sns-icon img {
+  width: 32px;           /* フッターと同じサイズ */
+  height: auto;
+  display: inline-block;
+  transition: transform 0.2s ease; /* ちょっとした動きを追加しても◎ */
+}
+
+.cta-card .sns-icon img:hover {
+  transform: scale(1.1); /* ホバー時に少し拡大 */
+}
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* ボタンとSNS案内の間の余白を調整 */
+ .cta-card .sns-box {
+  margin-top: 30px !important; /* ここでだけ余白を作る */
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* CTAカード内のInstagramアイコンを強制的にリセット＆サイズ固定 */
+  .course-card.cta-card .sns-icon img,
+  .service-card.cta-card .sns-icon img {
+    width: 36px !important;   /* ← ここを変えればサイズ変更できます（例：24/32px） */
+    height: 36px !important;  /* 正方形で安定させる */
+    aspect-ratio: 1 / 1;      /* 念のため比率固定 */
+    object-fit: contain !important;  /* 画像切れ防止 */
+    border-radius: 0 !important;     /* コース画像向けの角丸を無効化 */
+    box-shadow: none !important;     /* 影も無効化 */
+    margin: 8px 0 0 !important;      /* テキストリンクとの間隔だけ確保 */
+    display: inline-block;
+  }
+}
+
+/* ============================
+   iPad専用：カードは300px固定＋中央寄せ
+   行内の高さは揃える（CTA含む）
+   ============================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* 2列グリッド：各列300pxを厳守して中央に配置 */
+  .course-cards,
+  .service-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, 300px) !important; /* ← 固定幅 */
+    gap: 24px !important;
+    justify-content: center !important;  /* グリッド自体を中央に */
+    align-items: stretch !important;      /* 行内の高さを揃える */
+  }
+
+  /* 子要素は“引き伸ばさない”。幅はカードの幅に委ねる */
+  .course-cards > *,
+  .service-cards > * {
+    width: auto !important;               /* ← ここがポイント（100%を解除） */
+    height: auto !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 各カードの中身を縦並び、ボタンやSNS領域を下寄せできるように */
+  .course-cards > .course-card,
+  .service-cards > .service-card,
+  .course-cards > .cta-card,
+  .service-cards > .cta-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;              /* グリッドの行高にフィット */
+  }
+
+  /* aタグ内のテキストや画像も縦に流し、高さを埋める */
+  .course-card > a,
+  .service-card > a {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+  }
+
+  /* 画像はカード幅にフィットさせる（比率維持） */
+  .course-card img,
+  .service-card img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* CTAの下寄せ（必要ならON） */
+  .cta-card .sns-box { margin-top: auto !important; }
+
+  .course-card p,
+  .service-card p {
+    margin-top: 0;
+  }
+  .course-card h3,
+  .service-card h3 {
+    margin-top: 10px;
+  }
+  /* CTAカード内：SNSアイコン中央寄せ */
+.cta-card .sns-icon {
+  display: flex;
+  justify-content: center;  /* 横方向中央 */
+  margin-top: 8px;          /* アイコンとテキストの間に余白（調整用） */
+}
+
+.cta-card .sns-icon img {
+  display: block;
+  margin: 0 auto;           /* 念のため単体でも中央寄せ */
+  max-width: 48px;          /* 必要に応じてサイズ制御 */
+  height: auto;
+}
+/* FAQアイコン中央寄せ */
+.cta-card .faq-icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;   /* ボタンとの間隔 */
+}
+
+.cta-card .faq-icon img {
+  max-width: 48px;    /* サイズはお好みで調整 */
+  height: auto;
+}
+/* 「入会前の疑問にお答えします」を強調 */
+.sample-title {
+  font-size: 1.1em;        /* 少し大きめ */
+  font-weight: 550;        /* 太字（中くらいの太さ） */
+  margin-bottom: 5px;
+}
+/* 見出し h3 の下に余白 — style.css の10pxに勝つ用 */
+.service-card.cta-card h3 {
+  margin-bottom: 16px !important; /* ← 確実に上書き */
+}
+
+/* アイコンは中央配置のまま、下に少し余白だけ足す */
+.service-card.cta-card .faq-icon {
+  margin-bottom: 12px !important; /* 配置指定は触らない */
+}
+
+/* 「入会前の疑問にお答えします」を太く少し大きく */
+.service-card.cta-card .sample-title {
+  font-size: 1.1em;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 4px 0;
+}
+
+/* Q&Aサンプルとボタンの間も整える（任意） */
+.service-card.cta-card .faq-sample {
+  margin-bottom: 0;
+  font-size: 0.95em;
+}
+/* FAQサンプルを左揃えにする */
+.cta-card .faq-sample {
+  text-align: left !important;  /* 確実に左寄せ */
+  display: block;               /* 念のためブロックに戻す */
+  margin-left: 8px !important;    /* 中央寄せ系のマージンを打ち消す */
+}
+
+/* 中の段落も左揃え */
+.cta-card .faq-sample p {
+  text-align: left !important;
+  margin: 4px 0;
+}
+}
+
+/* FAQカードのボタンだけ margin-top を小さく */
+.service-card.cta-card .faq-sample + a.fancy-button {
+  margin-top: 8px !important;   /* ← お好みで 4px〜12px に調整 */
+}
+/* ============================
+   iPad（768–1024px）：ご利用の流れ
+   行ごとにカードの高さを自動で揃える
+   ============================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .flow-steps {
+    display: grid !important;
+    grid-template-columns: repeat(2, 280px) !important; /* 2列で安定 */
+    gap: 30px !important;
+    place-content: center !important;  /* 全体を中央に */
+    align-items: stretch !important;   /* 各行で高さを揃える */
+  }
+
+  .flow-step {
+    display: flex !important;          /* 中身を縦積み */
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    height: 100% !important;           /* 行高にフィット */
+    box-sizing: border-box !important;
+  }
+
+  /* 見出し・本文の余白を軽めに調整（潰れ見え防止）*/
+  .flow-step h3 {
+    margin: 10px 0 8px !important;
+  }
+  .flow-step p {
+    margin: 0 0 8px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* （任意）さらに“高さ差”を感じにくくする下限値
+     → 3枚目が内容少なくても“つぶれ見え”を防止 */
+  .flow-step {
+    min-height: 240px;  /* お好みで 220〜280px に調整可 */
+  }
+}
+/* ============================
+   iPad専用：flow-step 3枚目を中央寄せ
+   ============================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .flow-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 280px);
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .flow-step:nth-child(3) {
+    grid-column: 1 / -1;   /* 横幅いっぱいを使う */
+    justify-self: center;  /* 真ん中に置く */
+  }
+}
+/* ===== iPad（768–1024px）フッター：上=ロゴ、下=ナビ/右カラム ===== */
+@media (min-width:768px) and (max-width:1024px){
+
+  .site-footer{
+    padding: 32px 20px;
+  }
+
+  /* 親はgridで2列。上段はロゴで2列ぶち抜き */
+  .site-footer .footer-inner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "logo logo"
+      "nav  right";
+    gap: 20px 28px;
+    max-width: 960px;        /* 好みで 900〜1100px */
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  /* 基本の最小幅を解除（ベースCSSで min-width:250px があるため） */
+  .footer-logo,
+  .footer-nav,
+  .footer-right{
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  /* 配置 */
+  .footer-logo{  grid-area: logo;  text-align: center; }
+  .footer-nav{   grid-area: nav;   }
+  .footer-right{ grid-area: right; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+
+  /* 左カラム：メニューは2列グリッドで左寄せ */
+  .footer-nav ul{
+    display: flex;            /* gridからflexに変更 */
+    flex-direction: column;   /* 縦並び */
+    gap: 6px;                 /* 各リンクの間隔 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;          /* テキストも中央寄せ */
+  }
+  .footer-nav li{ 
+    margin: 0;
+    font-size: 1rem; 
+  }
+
+  /* 右カラム：SNSとリンクを縦積み・左寄せ */
+  .footer-social{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+  }
+  .footer-links{
+    margin-top: 6px;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  /* アイコン少し小さめ */
+  .footer-social img{
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (min-width:768px) and (max-width:1024px){
+  .footer-logo{
+    margin-top: -8px;   /* 少し上に引き上げる（数値は調整してOK） */
+  }
+}
+/* ===== iPad 768–1024px：company.html を“中央寄り”に整える ===== */
+@media (min-width:768px) and (max-width:1024px){
+
+  /* ページ内の本文コンテナを中央寄りに（テキストは左のまま） */
+  .company-wrapper{
+    width: min(92vw, 900px);           /* 画面に対して少し絞る */
+    margin: 0 auto;                    /* ブロックを中央へ */
+    padding-inline: clamp(16px, 4vw, 32px);
+  }
+
+  /* 各セクションの上下間隔をやや詰めてまとまり感 */
+  .company-section{ 
+    margin-block: 36px;
+  }
+
+  /* 会社概要：テーブルを“中央寄り”に配置（文字は左揃え維持） */
+  .company-detail .info-card{
+    width: 100%;
+    display: flex;
+    justify-content: center;           /* ボックス自体を中央へ */
+  }
+  .company-table{
+    width: min(100%, 720px);           /* 表の横幅を絞って中央に */
+    margin: 0 auto;                    /* ブロック中央 */
+    text-align: left;                  /* セル内は左揃え */
+  }
+
+  /* 理念・ビジョンの段落もブロック中央寄せ（読みやすく左揃え） */
+  .company-vision p{
+    width: min(92%, 760px);
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.9;
+  }
+
+  /* 沿革リストも同様に中央寄り配置（左揃え） */
+  .company-history .history-list{
+    width: min(92%, 760px);
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  /* 見出しはやや中央寄せに見せるための余白調整（任意） */
+  .company-section .h2-main{
+    margin-left: auto;
+    margin-right: auto;
+    width: min(92%, 760px);
+  }
+}
+@media (min-width:768px) and (max-width:1024px){
+  .company-section .h2-main{
+    font-size: 1.8rem;   /* ← 今が1.6remなら少しだけUP */
+    margin-bottom: 24px; /* 見出し下に余白をつけて見やすく */
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .work-environment .work-text {
+    padding: 0 28px 0 24px;  /* ← 左40px → 24px（様子を見て20〜28で調整） */
+  }
+}
+/* ===== iPad: course.html 料金セクション調整 ===== */
+@media (min-width:768px) and (max-width:1024px) {
+  .course-price h2 {
+    text-align: center !important;
+    margin-bottom: 16px; /* 見出し下の余白を少し整える */
+  }
+
+  .course-price .note {
+    text-align: center !important;
+    font-size: 0.9rem;           /* 少し控えめサイズ（お好み） */
+    color: #555;                 /* 注釈らしい落ち着いた色（お好み） */
+  }
+}
+
+
+/* iPad (768–1024px) 最終：左右40px＋上下を少し広げる */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #terms, #privacy {
+    /* 横の余白はそのまま */
+    padding-inline: 40px;
+
+    /* ↑ これに加えて、上下の余白を増やす ↓ */
+    padding-block: 32px; /* もっと欲しければ 40px or 48px に */
+
+    box-sizing: border-box;
+    max-width: 900px;
+    margin: 0 auto; /* 外側の上下は 0 のまま（内部だけ広げる） */
+  }
+}
+
+/* iPad 横向き (1024×768) 用：確認→適用 */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  /* 横向き用の本命スタイル（#terms と #privacy をまとめて調整） */
+  #terms,
+  #privacy {
+    /* 既存（縦向き）と同じでOK。横向きで少し広くしたければ 48px に */
+    padding-inline: 40px;   /* ←横をもう少し広げたいなら 48px に */
+    padding-block: 32px;    /* 上下のゆとり。24/40 に微調整可 */
+    box-sizing: border-box;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+/* ===== iPad 768–1024：index の調整まとめ（差し替え版） ===== */
+@media screen and (min-width:768px) and (max-width:1024px){
+
+  /* 1) 見出しを1.8remに統一（該当2箇所） */
+  .first-block .h2-main,
+  .facility-intro .h2-main {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  /* 2) 最初の紹介文だけ右にずらす（上限キャップつき） */
+  .first-block .container > p {
+    margin-left: clamp(24px, 12vw, 120px);
+    max-width: 66ch; /* 読みやすさのための行幅。不要なら消してOK */
+  }
+
+  /* 3) 施設紹介：右端の“謎の余白”を出さない2カラム */
+  .facility-intro-flex{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* space-between等を無効化 */
+    gap: 16px;                   /* カラム間のすき間 */
+  }
+  .facility-intro-image{
+    flex: 0 0 30%;               /* 画像カラムを30%に固定 */
+    padding: 0 !important;       /* 念のため内側余白ゼロ */
+  }
+  .facility-intro-image img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .facility-intro-text{
+    flex: 1 1 0;   /* ← 残り幅を“必ず”取り切る */
+    min-width: 0;  /* ← shrinkを許可（これが効き目です） */
+    max-width: none;
+  }
+
+  /* 4) まだ右端に余白が見える場合“だけ”下を有効化（先頭の / と最後の / を外す） */
+  /* .section.facility-intro { padding-right: 0 !important; } */
+}
+/* iPad 768–1024：facility-intro の左右パディングと右端余白の同時解消 */
+@media screen and (min-width:768px) and (max-width:1024px){
+  /* セクション自体に左右の内側余白を戻す（左がくっつくのを防ぐ） */
+  .section.facility-intro{
+    padding-inline: 24px;         /* 好みで 20～32px に調整OK */
+    box-sizing: border-box;
+  }
+
+  /* 行全体は幅いっぱいを使う */
+  .facility-intro-flex{
+    width: 100%;
+    margin: 0;                    /* 念のため外側マージンをクリア */
+    justify-content: flex-start;  /* 右端に空きを作らない */
+    gap: 16px;                    /* すき間はそのまま */
+  }
+
+  /* 画像は30%固定（すでにOK） */
+  .facility-intro-image{ flex: 0 0 30%; }
+
+  /* ←ここが肝：テキスト列が残り幅を“必ず”取り切る指定 */
+  .facility-intro-text{
+    flex: 1 1 auto;   /* 残り幅を素直に使う */
+    min-width: 0;     /* shrink を許可（これが無いと右に空きが出がち） */
+    max-width: none;  /* どこかで上限が掛かっていても解除 */
+    margin: 0;        /* 念のため */
+  }
+}
+/* iPad 768–1024：facility-intro のテキストだけ内側にずらす */
+@media screen and (min-width:768px) and (max-width:1024px){
+  #index-page .facility-intro-text{
+    padding-left: 100px;   /* 12〜24pxでお好みに調整OK */
+    box-sizing: border-box;
+  }
+}
+
+
+/* iPad 横向き (1024×768)：コースを3列グリッド固定／4枚目は非表示 */
+@media screen and (min-width:768px) and (max-width:1024px) and (orientation: landscape){
+  /* 親を“絶対に”grid化（古いflex指定などを上書き） */
+  #index-page .course-list .course-cards{
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-auto-flow: row;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 子の古い幅指定（flex-basisやwidth:50%など）を無力化 */
+  #index-page .course-list .course-card{
+    width: auto !important;
+    flex: initial !important;
+    min-width: 0;              /* はみ出し抑止 */
+  }
+  #index-page .course-list .course-card a{
+    display: block;
+    height: 100%;
+  }
+  #index-page .course-list .course-card img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* 4枚目のCTA（tab-only）は横向きでは非表示に */
+  #index-page .course-list .course-card.cta-card.tab-only,
+  #index-page .course-list .course-card.cta-card {
+    display: none !important;
+  }
+}
+
+/* iPad 横向き：サービス3枚を横並び／4枚目は非表示 */
+@media screen and (min-width:768px) and (max-width:1024px) and (orientation: landscape){
+  /* 親を3列グリッドに強制（既存のflex等を上書き） */
+  #index-page .service-section .service-cards{
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-auto-flow: row;
+    gap: 20px; /* 16〜24pxで調整OK */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 子カードの幅指定をリセットしてグリッドに従わせる */
+  #index-page .service-section .service-card{
+    width: auto !important;
+    flex: initial !important;
+    min-width: 0;
+  }
+  #index-page .service-section .service-card img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  #index-page .service-section .service-card a{
+    display: inline-block;
+  }
+
+  /* 4枚目（CTA, tab-only）は横向きでは非表示 */
+  #index-page .service-section .service-card.cta-card.tab-only,
+  #index-page .service-section .service-card.cta-card{
+    display: none !important;
+  }
+}
+
+/* iPad 768–1024：サービスの上下余白をコース並みに（後勝ちで上書き） */
+@media screen and (min-width:768px) and (max-width:1024px){
+  #index-page .service-section{
+    /* 目安：コース（外72px＋内32px ≒ 104px）に近づける */
+    padding-block: clamp(72px, 9vw, 104px);
+  }
+}
+
+/* iPad 横向き (1024×768)：ご利用の流れを3列に固定＆子の幅指定をリセット */
+@media screen and (min-width:768px) and (max-width:1024px) and (orientation: landscape){
+  /* 親：必ずgrid化（既存flex/2列指定を無効化） */
+  #index-page .flow-section .flow-steps{
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-auto-flow: row;
+    gap: 20px;                   /* 16〜24pxで調整OK */
+    width: 100%;
+    box-sizing: border-box;
+    align-items: stretch;        /* 高さはカードに合わせて伸ばす */
+  }
+
+  /* 子：古い幅・flex・float・マージンをリセットして1カラム分に収める */
+  #index-page .flow-section .flow-step{
+    width: auto !important;
+    flex: initial !important;
+    float: none !important;
+    grid-column: auto / span 1 !important;
+    grid-row: auto / span 1 !important;
+    min-width: 0;                /* テキストのはみ出し防止 */
+    margin: 0 !important;
+    height: 100%;                /* 可能なら均等高さ */
+    box-sizing: border-box;
+  }
+}
+
+/* iPad 横向き：ご利用の流れカード内の段落だけ右に寄せる */
+@media screen and (min-width:768px) and (max-width:1024px) and (orientation: landscape){
+  #index-page .flow-section .flow-step p{
+    padding-left: 8px;   /* 好みで 12–20px に調整OK */
+    box-sizing: border-box;
+    margin: 0;            /* 余計な左マージンがあれば打ち消す */
+  }
+}
+
+
+/* iPad 768–1024：お客様の声の上下余白を広げる */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #index-page .voice-section{
+    /* 目安：72〜104pxあたりで調整。まずはこの値から */
+    padding-block: clamp(72px, 9vw, 104px);
+  }
+}
+/* iPad 768–1024：アクセスのサブ見出し配置を最適化（中央寄せ） */
+@media screen and (min-width:768px) and (max-width:1024px){
+  #index-page .access-section .h2-main{
+    text-align: center;
+    margin-bottom: 8px; /* H2とサブの間をキュッと */
+  }
+  #index-page .access-section .h2-sub{
+    display: block;
+    text-align: center;      /* 中央寄せ */
+    margin: 6px auto 28px;   /* 上6 / 下28（好みで 24–40px に調整OK） */
+    font-weight: 500;        /* 視認性を少し上げる（不要なら削除） */
+    letter-spacing: .02em;   /* ほんのり読みやすく（任意） */
+  }
+}
+
+
+/* iPad 768–1024：ヒーロー見出しを少し小さく */
+@media screen and (min-width:768px) and (max-width:1024px){
+  #index-page .hero .hero-text h1{
+    font-size: clamp(16px, 2.6vw, 38px); /* 小さめに統一 */
+    line-height: 1.2;
+    letter-spacing: .02em;
+  }
+}
+
+/* 768px以上：アクセスの営業時間を安定配置（横間↑、終端揃え、行間↓） */
+@media screen and (min-width: 768px) {
+  /* 行：フレックスで横並び。space-between は使わない */
+  #index-page .access-section .business-hours dd{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;          /* 横の間：狭い→10px / 広い→14px に調整OK */
+    margin: 0;          /* 行間は下の +dd で管理 */
+  }
+  /* 行間（縦）を明示して詰める */
+  #index-page .access-section .business-hours dd + dd{
+    margin-top: 0;    /* まだ広ければ 2px、ゆったりは 6px */
+  }
+
+  /* 左列＝ラベルの固定幅（em単位なのでフォントサイズ連動） */
+  #index-page .access-section .business-hours .label{
+    flex: 0 0 3em;      /* 5.5em～6.5em で好みに調整 */
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  /* 右列＝時間は一定幅＋右揃えで“文字終端”を揃える */
+  #index-page .access-section .business-hours .time{
+    flex: 0 0 12ch;     /* 10:00～21:00 を想定。足りなければ 13ch に */
+    text-align: right;
+    margin: 0;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums; /* 数字幅を揃えてズレ防止 */
+  }
+
+  /* 「営業時間：」(dt) の下の余白を少しだけ */
+  #index-page .access-section .business-hours dt{
+    margin: 0 0 6px;
+  }
+}
+
+
+
+/* iPad 横向き(1024×768) 共通：フッターメニューを1列・中央寄せに */
+@media screen and (min-width:768px) and (max-width:1024px) and (orientation: landscape){
+  .site-footer .footer-nav ul{
+    grid-template-columns: 1fr !important; /* ← 1列に固定 */
+    justify-items: center;                 /* ← 中央寄せ */
+    row-gap: 8px;
+    column-gap: 0;
+  }
+  .site-footer .footer-nav li a{
+    display: inline-block;
+    text-align: center;                    /* リンク文字も中央寄せ */
+  }
+}
+/* iPad 横向き(1024×768) 共通：フッター右カラムをカラム内で中央寄せ */
+@media screen and (min-width:768px) and (max-width:1024px) and (orientation: landscape){
+  footer.site-footer .footer-right{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* 水平方向の中央寄せ */
+    gap: 8px;
+    text-align: center !important;  /* テキストも中央寄せ */
+  }
+  footer.site-footer .footer-right .footer-social{
+    display: flex;
+    align-items: center;
+    justify-content: center !important; /* アイコン行を中央に */
+    gap: 8px;
+  }
+  footer.site-footer .footer-right .footer-links{
+    text-align: center !important;
+  }
+}
+
+/* iPad縦向きのみ（必要なら外して全端末に） */
+@media (min-width:768px) and (max-width:1024px) and (orientation:portrait){
+  #index-page #faq .faq-answer{
+    display: inline;         /* or block でもOK */
+  }
+  #index-page #faq .faq-answer .faq-label{
+    font-weight: 600;
+    margin-right: .25em;     /* ← 余白が不要なら 0 に */
+    white-space: nowrap;
+  }
+}
+
+/*
+@media (min-width:768px) and (max-width:1024px) and (orientation:portrait){
+
+
+  #index-page #faq .faq-answer,
+  #index-page #faq .faq-question{
+    position: static !important;
+    display: block !important;
+    padding-left: 0 !important;
+    text-indent: 0 !important;
+  }
+  #index-page #faq .faq-label{
+    position: static !important;
+    transform: none !important;
+    width: auto !important;
+    white-space: nowrap;
+    margin-right: .25em; 
+    font-weight: 600;
+  }
+
+
+  #index-page #faq{
+    padding-left: 2.4em;  
+    box-sizing: border-box;
+  }
+}
+  */
+@media (min-width:768px) and (max-width:1024px) and (orientation:portrait){
+  #faq.faq-v2 { padding-left: 2.4em; box-sizing: border-box; }
+  #faq.faq-v2 .faq-label { margin-right: .25em; }
+
+
+  /* ---- 非常用（必要になったらコメント解除） ---- */
+  /*
+  #faq.faq-v2 .faq-answer {
+    position: static !important;
+    display: block !important;
+    padding-left: 0 !important;
+    text-indent: 0 !important;
+  }
+  #faq.faq-v2 .faq-answer .faq-label {
+    position: static !important;
+    transform: none !important;
+    width: auto !important;
+  }
+  */
+}
+
+/* 1024×768（横）だけ：Hero h1を少し小さく */
+@media (width: 1024px) and (height: 768px) and (orientation: landscape) {
+  .hero.hero-course .hero-text h1 {
+    font-size: 28px;   /* もう少し小さく。様子見で32〜36pxで微調整OK */
+    line-height: 1.2;
+  }
+}
+
+/* 1024×768（横）だけ：画像は元サイズ感に戻し、間を詰める */
+@media (width: 1024px) and (height: 768px) and (orientation: landscape) {
+  .course-detail .course-flex {
+    display: grid;                               /* Flex → Gridで制御 */
+    grid-template-columns: minmax(300px, 36%) 1fr; /* 左=画像列の幅を確保 */
+    column-gap: 2.8rem;                          /* ← “間”はここで調整（0.6〜1.0rem） */
+    align-items: start;
+  }
+  .course-detail .course-flex > img {
+    width: 100%;   /* 画像は左カラムにフィット */
+    height: auto;
+  }
+}
+
+/* 1024×768（横）だけ：料金テーブルの横幅を絞って中央寄せ */
+@media (width: 1024px) and (height: 768px) and (orientation: landscape) {
+  .course-price .container {
+    max-width: 760px;      /* お好みで 680〜820px */
+    margin-inline: auto;
+    padding-inline: 16px;  /* 端の窮屈さを軽減 */
+  }
+}
+
+/* 1024×768（横）だけ：コースセクションの上下余白を軽く詰める */
+@media (width: 1024px) and (height: 768px) and (orientation: landscape){
+  .course-detail{
+    margin-block: 18px; /* お好みで 12–24px に調整 */
+  }
+}
+
+/* 1024×768（横）だけ：companyページの本文幅を絞って中央寄せ */
+@media (width: 1024px) and (height: 768px) and (orientation: landscape){
+  .company-wrapper{
+    max-width: 760px;      /* お好みで 700〜820px に微調整可 */
+    margin-inline: auto;
+    padding-inline: 16px;  /* 端の窮屈さを軽減 */
+  }
+}
+
+/* 1025px以上：利用規約/プライバシー本文を中央寄せ＆幅制限 */
+@media (min-width:1025px){
+  .legal-v2{
+    max-width: 980px;          /* お好みで 700〜860px */
+    margin-inline: auto;
+    padding-inline: 16px;      /* 端の窮屈さを軽減 */
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1025px){
+  /* 既存のこれ↓はそのままでOK */
+  .section, .section-bg .section { padding: 80px 0; }
+
+  /* セクション間だけに上下余白を付与（marginの食い合い対策） */
+  .sec-vspace { margin: 0; }               /* まずリセット */
+  .sec-vspace + .sec-vspace { margin-top: 40px; }  /* 直後のセクションとの“間”だけに余白 */
+}
+
+@media (min-width: 1025px){
+  :root{
+    --container-max: 1100px;  /* 好みで 1000〜1200px などに */
+    --container-pad: 16px;    /* 横の余白 */
+  }
+
+  /* どこにあっても .section は“センター＆幅制限” */
+  .section{
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
+    box-sizing: border-box;
+  }
+
+  /* フル幅にしたいセクションだけ opt-out（必要になったら付ける） */
+  .section.fullbleed{
+    max-width: none;
+    margin-inline: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width:1025px){
+  /* 左寄りが気になるブロックをセンター＆幅制限（安全ネット） */
+  .section.facility-intro,      /* 詳細紹介（.section を外側に持つケース） */
+  .recruit-detail,              /* 募集要項 */
+  .work-environment,            /* 働く環境 */
+  .apply-section,               /* 応募 */
+  #faq .section.faq-section {   /* FAQの内側コンテナ */
+    max-width: 1100px;          /* 好みで 1000～1200px に */
+    margin-inline: auto;
+    padding-inline: 16px;
+    box-sizing: border-box;
+  }
+}
+@media (min-width:1025px){
+
+  /* A) facility-intro：次のセクションとの“間”だけ0に（= margin-top 0） */
+  .sec-vspace.facility-intro{ margin-top: 0; } /* .sec-vspace + .sec-vspace の上書き */
+
+  /* 必要なら、このセクションだけ上パディングも調整（例：80→48） */
+  .section.facility-intro{ padding-top: 48px; }  /* もっと詰めたければ 32px などに */
+
+}
+
+@media (min-width:1025px){
+
+  /* 2) recruit：グラデ2セクションをフル幅に（左右の余白なし） */
+  .work-environment,
+  .apply-section{
+    max-width: none;          /* 安全ネットで付いた幅制限を解除 */
+    margin-inline: 0;         /* 中央寄せを解除 */
+    padding-left: 0;          /* インライン余白を除去 */
+    padding-right: 0;
+  }
+
+  /* （任意）背景はフル幅のまま、中のテキストだけ読みやすい幅にしたい場合 */
+  .work-environment > *,
+  .apply-section > *{
+    max-width: 1100px;        /* 好みで 1000–1200px */
+    margin-inline: auto;
+    padding-inline: 16px;
+    box-sizing: border-box;
+  }
+}
+@media (min-width:1025px){
+  /* グラデ2セクションをフル幅のまま “ぴったり連結” させる */
+  .sec-vspace.work-environment,
+  .sec-vspace.apply-section{
+    /* 外側マージンを殺す（間の白帯を作らない） */
+    margin: 0;
+
+    /* 先頭子の margin-top が親の外へにじむのを防ぐ（見た目の高さは増やさない） */
+    overflow: hidden;            /* ← margin collapse 防止の一手（高さは増えません） */
+  }
+
+  /* 2つが連続する箇所だけ “間” を0に固定（汎用ルールの上書き） */
+  .sec-vspace.work-environment + .sec-vspace.apply-section{
+    margin-top: 0;
+  }
+
+  /* 中の見出しだけは上マージンをゼロに（必要なら） */
+  .work-environment .h2-main,
+  .apply-section .h2-main{
+    margin-top: 0;
+  }
+}
+@media (min-width:1025px){
+  /* FAQ（v2）：h2は中央、本文は左寄せ＋中央配置 */
+  #faq.faq-v2 .section.faq-section{
+    padding-left: 0;                /* 以前の右寄せ調整をオフ（PCでは不要） */
+  }
+  #faq.faq-v2 .section.faq-section h2{
+    text-align: center;
+    margin-bottom: 12px;            /* お好みで 8〜16px */
+  }
+  #faq.faq-v2 .section.faq-section .faq-list{
+    max-width: 780px;               /* お任せ幅。760〜980pxで調整可 */
+    margin: 0 auto;                 /* 中央配置 */
+    text-align: left;               /* Q/Aは左寄せ */
+  }
+}
